@@ -1,0 +1,143 @@
+<div class="whatswidget-widget-wrapper">
+  <div id="whatswidget-conversation">
+    <div class="whatswidget-conversation-header">Marcus</div>
+    <div class="whatswidget-conversation-message-outer">Clique para iniciar uma conversa</div>
+	<div class="whatswidget-cta">
+		<a class="whatswidget-cta-a" href="https://api.whatsapp.com/send?phone=5531990858062" target="_blank">Fale Conosco</a>
+	</div>
+  </div>
+  <div class="whatswidget-button-wrapper">
+    <div id="whatswidget-button">
+      <!-- Você pode adicionar sua própria imagem aqui -->
+      <img class="whatswidget-icon" src="whats.png" alt="WhatsApp Icon">
+    </div>
+  </div>
+  
+</div>
+<script>
+  var button = document.getElementById("whatswidget-button");
+  button.addEventListener("click", openChat);
+
+  var chatOpen = false;
+  function openChat() {
+    var conversation = document.getElementById("whatswidget-conversation");
+    if (!chatOpen) {
+      conversation.style.display = "block";
+      conversation.style.opacity = 1;
+      chatOpen = true;
+    } else {
+      conversation.style.opacity = 0;
+      conversation.style.display = "none";
+      chatOpen = false;
+    }
+  }
+</script>
+<style>
+	/* Estilos gerais */
+	.whatswidget-widget-wrapper {
+	font-family: "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 1001;
+	}
+
+	#whatswidget-conversation {
+	background-color: #e4dcd4;
+	background-image: url("backgd-whats.png");
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 40px;
+	width: 250px;
+	height: 300px;
+	border-radius: 10px;
+	margin-bottom: 80px;
+	display: none;
+	opacity: 0;
+	transition-duration: 0.5s;
+	}
+
+	.whatswidget-conversation-header {
+	background-color: white;
+	padding: 10px;
+	padding-left: 25px;
+	font-weight: 600;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 0px 1px #00000029;
+	}
+
+	.whatswidget-conversation-message-outer {
+	background-color: #fff;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.342) 0px 2.5px 10px;
+	cursor: pointer;
+	animation: nudge 2s linear infinite;
+	margin-bottom: 70px;
+	}
+
+	/* Ícone do WhatsApp */
+	.whatswidget-icon {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	}
+
+	/* Botão de chat */
+	.whatswidget-button-wrapper {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	}
+
+	#whatswidget-button {
+		background-color: #31d831;
+		border-radius: 100%;
+		width: 60px;
+		height: 60px;
+		box-shadow: 2px 1px #0d630d63;
+		transition: 1s;
+	}
+
+	#whatswidget-button:hover {
+		filter: brightness(115%);
+		transform: rotate(15deg) scale(1.15);
+		cursor: pointer;
+	}
+
+	/* Link de ação */
+
+
+	.whatswidget-cta {
+	  border-radius:25px; 
+	  width:175px; 
+	  padding: 15px; 
+	  margin: 0 auto; 
+	  background-color:#23b123;
+	  box-shadow:rgba(0, 0, 0, 0.16) 0px 2.5px 10px; 
+	  transition:1s; 
+	  position:absolute; 
+	  text-align:center; 
+	  top:62%; 
+	  left:10%; 
+	}
+
+	.whatswidget-cta-a {
+	  text-decoration: none;
+	  color: white;
+	  font-size:110%;
+	  
+	  font-weight:bold; 
+	}
+
+	/* Estilos para dispositivos móveis */
+	@media (max-width: 48em) {
+		.whatswidget-link {
+			display: none;
+		}
+	}
+
+</style>
